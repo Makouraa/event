@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EVENTS</title>
+	<script type="text/javascript" src="event.js"></script>
+</head>
+<body>
+	<h1>AJOUT EVENT</h1>
+<form method="post" action="ajouterEvent.php">
+ID :  <input type="number" name="id"><br/>
+Titre:  <input type="text" name="titre"><br/>
+Description : <textarea name="description"></textarea><br/>
+Adresse: <input type="text" name="adresse"><br/>
+Date : <input type="date" name="date"><br/>
+Heure : <input type="time" name="heure"><br/>
+Type : <input type="text" name="type"><br/>
+
+<input type="submit" >
+</form>
+
+
+<h1>SUPRESSION EVENT</h1>
+<form method="post" action="supprimerEvent.php">
+	<input type="text" name="supp">
+	<select name="with">
+		<option>Please choose ! </option>
+		<option value="Reference">Identifiant</option>
+		<option value="Nom">Nom</option>
+		<option value="Type">Type</option>
+
+	</select>
+	<input type="submit" value="Delete">
+
+</form>
+
+
+
+<h1>MODIFICATION EVENT</h1>
+<form method="post" action="modifierEvent.php">
+	Vous allez modifier :
+	<select name="modwith" onchange="ModifSelect()" id="selectmodif">
+		<option>Please choose ! </option>
+		<option value="Reference">ID</option>
+		<option value="Nom">Titre</option>
+		<option value="Date">Date</option>
+		<option value="Heure">Heure</option>
+		<option value="Adresse">Adresse</option>
+		<option value="Type">Type</option>
+		
+
+	</select>
+	<br/>
+	Reference du produit à modifier : <input type="text" name="ref"/> <br/>
+	<div id="newvaldiv">Nouvelle valeure : <input type="text" name="new" id="newval" /></div> <br/>
+	<input type="submit" value="Modifier"/>
+
+</form>
+
+
+
+</body>
+</html>
